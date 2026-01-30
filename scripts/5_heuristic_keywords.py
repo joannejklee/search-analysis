@@ -50,7 +50,6 @@ JOB_KEYWORD_MAP = {
     '코스메틱': 'cosmetic',
     '패션': 'fashion',
     '스킨케어': 'skincare',
-    '립': 'lip',
     '메이크업': 'makeup',
     '향수': 'perfume, fragrance',
     '주얼리': 'jewelry',
@@ -90,6 +89,7 @@ JOB_KEYWORD_MAP = {
     '실내': 'indoor',
     
     # Product types
+    '입술': 'lip',
     '립밤': 'lip balm',
     '립스틱': 'lipstick',
     '파운데이션': 'foundation',

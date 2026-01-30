@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text & Vocabulary Analysis Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        .subtitle {
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #667eea;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .translation {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Text & Vocabulary Analysis Report</h1>
+        <div class="subtitle">Analysis of job names and inquiry phrases from 2025 bookings</div>
+    </div>
+
+    <div class="section">
+        <h2>📈 Overview Statistics</h2>
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">1575</div>
+                <div class="stat-label">Unique Jobs</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3205</div>
+                <div class="stat-label">Total Bookings</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">39317</div>
+                <div class="stat-label">Unique Phrases</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">1150</div>
+                <div class="stat-label">Korean Texts</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📝 Top 20 Job Names</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Job Name (Korean)</th>
+                    <th>English Translation</th>
+                    <th>Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td></td><td class='translation'></td><td>46</td></tr><tr><td>2</td><td>25 FW 룩북 촬영</td><td class='translation'>25 FW lookbook shoot</td><td>22</td></tr><tr><td>3</td><td>25 summer 룩북</td><td class='translation'>25 summer lookbook</td><td>21</td></tr><tr><td>4</td><td>라이브 소개팅 구인</td><td class='translation'>Live Blind Date Recruitment</td><td>15</td></tr><tr><td>5</td><td>25 SS</td><td class='translation'>25SS</td><td>14</td></tr><tr><td>6</td><td>25fw 룩북</td><td class='translation'>25fw lookbook</td><td>11</td></tr><tr><td>7</td><td>졸업작품 촬영</td><td class='translation'>Graduation photo shoot</td><td>11</td></tr><tr><td>8</td><td>25 FW 짐스포츠 웨어 신상품 촬영</td><td class='translation'>25 FW gym sportswear new product shooting</td><td>11</td></tr><tr><td>9</td><td>25 fw 룩북</td><td class='translation'>25 fw lookbook</td><td>10</td></tr><tr><td>10</td><td>라이브 소개팅 구인 온라인 참여</td><td class='translation'>Live Blind Date Recruitment Online Participation</td><td>9</td></tr><tr><td>11</td><td>국내 자동차 브랜드</td><td class='translation'>Domestic car brands</td><td>8</td></tr><tr><td>12</td><td>25hs lookbook</td><td class='translation'>25hs lookbook</td><td>8</td></tr><tr><td>13</td><td>25w 실내촬영</td><td class='translation'>25w indoor shooting</td><td>7</td></tr><tr><td>14</td><td>25 FW 룩북</td><td class='translation'>25 FW Lookbook</td><td>7</td></tr><tr><td>15</td><td>colondecolon lip shoot</td><td class='translation'>colondecolon lip shoot</td><td>7</td></tr><tr><td>16</td><td>듀오커브 브랜드 필름 15 한편</td><td class='translation'>DuoCurve Brand Film 15</td><td>7</td></tr><tr><td>17</td><td>25 SS 룩북 촬영</td><td class='translation'>25 SS Lookbook Shooting</td><td>7</td></tr><tr><td>18</td><td>24 f w 캠페인</td><td class='translation'>24fw campaign</td><td>7</td></tr><tr><td>19</td><td>25 SS LOOKBOOK</td><td class='translation'>25SS LOOKBOOK</td><td>7</td></tr><tr><td>20</td><td>26ss 룩북촬영</td><td class='translation'>26ss lookbook shooting</td><td>6</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🔑 Top 30 Phrases from Inquiry Text</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Phrase (Korean)</th>
+                    <th>English Translation</th>
+                    <th>Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>촬영 예정입니다</td><td class='translation'>I'm planning on filming</td><td>206</td></tr><tr><td>2</td><td>회신 부탁드립니다</td><td class='translation'>Please reply</td><td>89</td></tr><tr><td>3</td><td>확인 부탁드립니다</td><td class='translation'>Please check</td><td>87</td></tr><tr><td>4</td><td>라이브 방송</td><td class='translation'>live broadcast</td><td>83</td></tr><tr><td>5</td><td>공개 소개팅</td><td class='translation'>public blind date</td><td>72</td></tr><tr><td>6</td><td>가능 여부</td><td class='translation'>Availability</td><td>67</td></tr><tr><td>7</td><td>인스타그램 유튜브</td><td class='translation'>Instagram Youtube</td><td>61</td></tr><tr><td>8</td><td>가능하신 분</td><td class='translation'>Anyone who can</td><td>60</td></tr><tr><td>9</td><td>gmail com</td><td class='translation'>gmail com</td><td>54</td></tr><tr><td>10</td><td>중 하루</td><td class='translation'>middle of the day</td><td>54</td></tr><tr><td>11</td><td>iamhelenjang gmail</td><td class='translation'>iamhelenjang gmail</td><td>53</td></tr><tr><td>12</td><td>iamhelenjang gmail com</td><td class='translation'>iamhelenjang gmail com</td><td>53</td></tr><tr><td>13</td><td>수 있습니다</td><td class='translation'>can</td><td>50</td></tr><tr><td>14</td><td>라이브 공개</td><td class='translation'>live public</td><td>48</td></tr><tr><td>15</td><td>20 00</td><td class='translation'>20 00</td><td>48</td></tr><tr><td>16</td><td>라이브 공개 소개팅</td><td class='translation'>Live public blind date</td><td>48</td></tr><tr><td>17</td><td>촬영 가능</td><td class='translation'>Available for shooting</td><td>47</td></tr><tr><td>18</td><td>헤어 메이크업</td><td class='translation'>hair makeup</td><td>45</td></tr><tr><td>19</td><td>촬영 일정</td><td class='translation'>shooting schedule</td><td>44</td></tr><tr><td>20</td><td>촬영할 예정입니다</td><td class='translation'>I'm planning to film</td><td>42</td></tr><tr><td>21</td><td>안녕하세요 저희는</td><td class='translation'>Hello we are</td><td>39</td></tr><tr><td>22</td><td>예상 답변</td><td class='translation'>expected answer</td><td>39</td></tr><tr><td>23</td><td>것 같습니다</td><td class='translation'>It seems like</td><td>36</td></tr><tr><td>24</td><td>촬영 장소</td><td class='translation'>filming location</td><td>36</td></tr><tr><td>25</td><td>룩북 촬영</td><td class='translation'>Lookbook shoot</td><td>35</td></tr><tr><td>26</td><td>하루 촬영</td><td class='translation'>one day shooting</td><td>34</td></tr><tr><td>27</td><td>일정 확인</td><td class='translation'>Check schedule</td><td>33</td></tr><tr><td>28</td><td>진행될 예정입니다</td><td class='translation'>It is scheduled to proceed</td><td>31</td></tr><tr><td>29</td><td>자사 홈페이지</td><td class='translation'>Company website</td><td>31</td></tr><tr><td>30</td><td>내 스튜디오</td><td class='translation'>my studio</td><td>30</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🎨 Concept-Related Vocabulary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Concept Word</th>
+                    <th>Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>concept</td><td>109</td></tr><tr><td>feel</td><td>79</td></tr><tr><td>natural</td><td>62</td></tr><tr><td>style</td><td>52</td></tr><tr><td>mood</td><td>47</td></tr><tr><td>theme</td><td>17</td></tr><tr><td>casual</td><td>9</td></tr><tr><td>commercial</td><td>8</td></tr><tr><td>formal</td><td>7</td></tr><tr><td>lifestyle</td><td>7</td></tr><tr><td>minimal</td><td>4</td></tr><tr><td>modern</td><td>4</td></tr><tr><td>professional</td><td>4</td></tr><tr><td>editorial</td><td>4</td></tr><tr><td>vintage</td><td>3</td></tr><tr><td>aesthetic</td><td>1</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>📁 Exported Files</h2>
+        <ul>
+            <li><strong>vocabulary_with_translations.csv</strong> - Full dataset with translations</li>
+            <li><strong>phrase_frequency.csv</strong> - Top 30 phrases with English translations</li>
+            <li><strong>job_name_frequency.csv</strong> - Top 20 job names with English translations</li>
+            <li><strong>concept_words_frequency.csv</strong> - Concept-related word frequencies</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Patterns Analysis Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        .subtitle {
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #11998e;
+            border-bottom: 2px solid #11998e;
+            padding-bottom: 10px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #11998e;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .chart-link {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: #11998e;
+            border: 2px solid #11998e;
+            transition: all 0.3s;
+        }
+        .chart-link:hover {
+            background: #11998e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔍 Search Patterns Analysis Report</h1>
+        <div class="subtitle">Analysis of shoot types, locations, usages, and their combinations</div>
+    </div>
+
+    <div class="section">
+        <h2>📈 Overview Statistics</h2>
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">1575</div>
+                <div class="stat-label">Unique Jobs Analyzed</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Shoot Types</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Location Types</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Usage Types</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📸 Shoot Types Distribution</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Shoot Type</th>
+                    <th>Frequency</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>photo</td><td>1533</td><td>97.3%</td></tr><tr><td>making_film</td><td>252</td><td>16.0%</td></tr><tr><td>brand_film</td><td>174</td><td>11.0%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>📍 Shoot Locations Distribution</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Frequency</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>indoor</td><td>1508</td><td>95.7%</td></tr><tr><td>outdoor</td><td>198</td><td>12.6%</td></tr><tr><td>outside_metropolis</td><td>60</td><td>3.8%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>💼 Usage Types Distribution</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Usage Type</th>
+                    <th>Frequency</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>digital</td><td>1509</td><td>95.8%</td></tr><tr><td>digital_sponsored_ads</td><td>381</td><td>24.2%</td></tr><tr><td>printout</td><td>116</td><td>7.4%</td></tr><tr><td>magazine</td><td>40</td><td>2.5%</td></tr><tr><td>outdoor_ads</td><td>23</td><td>1.5%</td></tr><tr><td>tv_commercial</td><td>19</td><td>1.2%</td></tr><tr><td>home_shopping</td><td>16</td><td>1.0%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Top Combinations</h2>
+        <h3>Type + Location</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Combination</th>
+                    <th>Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>photo + indoor</td><td>1469</td></tr><tr><td>2</td><td>making_film + indoor</td><td>244</td></tr><tr><td>3</td><td>photo + outdoor</td><td>189</td></tr><tr><td>4</td><td>brand_film + indoor</td><td>155</td></tr><tr><td>5</td><td>brand_film + outdoor</td><td>58</td></tr><tr><td>6</td><td>photo + outside_metropolis</td><td>56</td></tr><tr><td>7</td><td>making_film + outdoor</td><td>34</td></tr><tr><td>8</td><td>brand_film + outside_metropolis</td><td>13</td></tr><tr><td>9</td><td>making_film + outside_metropolis</td><td>4</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Type + Usage</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Combination</th>
+                    <th>Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>photo + digital</td><td>1467</td></tr><tr><td>2</td><td>photo + digital_sponsored_ads</td><td>378</td></tr><tr><td>3</td><td>making_film + digital</td><td>245</td></tr><tr><td>4</td><td>brand_film + digital</td><td>168</td></tr><tr><td>5</td><td>photo + printout</td><td>116</td></tr><tr><td>6</td><td>making_film + digital_sponsored_ads</td><td>88</td></tr><tr><td>7</td><td>brand_film + digital_sponsored_ads</td><td>85</td></tr><tr><td>8</td><td>photo + magazine</td><td>40</td></tr><tr><td>9</td><td>making_film + printout</td><td>34</td></tr><tr><td>10</td><td>brand_film + printout</td><td>32</td></tr><tr><td>11</td><td>photo + outdoor_ads</td><td>23</td></tr><tr><td>12</td><td>photo + tv_commercial</td><td>17</td></tr><tr><td>13</td><td>brand_film + tv_commercial</td><td>17</td></tr><tr><td>14</td><td>photo + home_shopping</td><td>16</td></tr><tr><td>15</td><td>brand_film + magazine</td><td>16</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>📊 Interactive Charts</h2>
+        <div class="chart-grid">
+            <a href="shoot_types.html" class="chart-link" target="_blank">
+                📸 Shoot Types Chart
+            </a>
+            <a href="shoot_locations.html" class="chart-link" target="_blank">
+                📍 Locations Chart
+            </a>
+            <a href="usages.html" class="chart-link" target="_blank">
+                💼 Usages Chart
+            </a>
+            <a href="copyright_duration.html" class="chart-link" target="_blank">
+                ⏱️ Copyright Duration
+            </a>
+            <a href="shoot_hours.html" class="chart-link" target="_blank">
+                ⏰ Shoot Hours
+            </a>
+            <a href="combo_type_location.html" class="chart-link" target="_blank">
+                🔗 Type + Location
+            </a>
+            <a href="combo_type_usage.html" class="chart-link" target="_blank">
+                🔗 Type + Usage
+            </a>
+            <a href="heatmap_type_location.html" class="chart-link" target="_blank">
+                🔥 Type vs Location Heatmap
+            </a>
+            <a href="pattern_hierarchy.html" class="chart-link" target="_blank">
+                🌐 Pattern Hierarchy
+            </a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📁 Exported Files</h2>
+        <ul>
+            <li><strong>shoot_types_frequency.csv</strong> - Shoot type frequencies</li>
+            <li><strong>shoot_locations_frequency.csv</strong> - Location frequencies</li>
+            <li><strong>usages_frequency.csv</strong> - Usage type frequencies</li>
+            <li><strong>type_location_combinations.csv</strong> - Type + Location combos</li>
+            <li><strong>type_usage_combinations.csv</strong> - Type + Usage combos</li>
+            <li><strong>full_pattern_combinations.csv</strong> - Complete patterns</li>
+            <li><strong>numeric_statistics.csv</strong> - Copyright and hours stats</li>
+            <li><strong>parsed_patterns_data.csv</strong> - Full parsed dataset</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>💡 Key Insights</h2>
+        <ul>
+            <li><strong>Most common shoot type:</strong> photo (1533 jobs)</li>
+            <li><strong>Most common location:</strong> indoor (1508 jobs)</li>
+            <li><strong>Most common usage:</strong> digital (1509 jobs)</li>
+            <li><strong>Average copyright duration:</strong> 8.2 months</li>
+            <li><strong>Average shoot hours:</strong> 4.8 hours</li>
+            <li><strong>Top combination:</strong> photo + indoor (1469 jobs)</li>
+        </ul>
+    </div>
+</body>
+</html>

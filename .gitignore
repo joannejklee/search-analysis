@@ -1,0 +1,37 @@
+# Data files - DO NOT commit
+data/
+*.csv
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs (keep only docs folder for GitHub Pages)
+outputs/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+tmp/
+temp/

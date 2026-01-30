@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Booking Analysis - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .login-container.hidden {
+            display: none;
+        }
+        
+        .logo {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .password-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        
+        .password-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .login-btn:active {
+            transform: translateY(0);
+        }
+        
+        .error-message {
+            color: #e91e63;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        /* Dashboard styles */
+        .dashboard {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .dashboard.show {
+            display: block;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .report-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .report-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .report-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        
+        .report-description {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .report-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .report-link::after {
+            content: '→';
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .report-card:hover .report-link::after {
+            transform: translateX(5px);
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            opacity: 0.8;
+        }
+        
+        .logout-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+            
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="login-container" id="loginContainer">
+        <div class="logo">🔐</div>
+        <h1>Team Access</h1>
+        <p class="subtitle">Enter password to view reports</p>
+        <form id="loginForm" onsubmit="checkPassword(event)">
+            <input 
+                type="password" 
+                id="passwordInput" 
+                class="password-input" 
+                placeholder="Enter password"
+                autocomplete="off"
+                required
+            >
+            <button type="submit" class="login-btn">Access Reports</button>
+            <p class="error-message" id="errorMessage">Incorrect password. Please try again.</p>
+        </form>
+    </div>
+
+    <!-- Dashboard (hidden until login) -->
+    <div class="dashboard" id="dashboard">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+        
+        <div class="header">
+            <h1>📊 2025 Booking Analysis</h1>
+            <p>Comprehensive insights from data analysis</p>
+        </div>
+        
+        <div class="reports-grid">
+            <a href="patterns_report.html" class="report-card">
+                <div class="report-icon">🔍</div>
+                <div class="report-title">Patterns Report</div>
+                <div class="report-description">
+                    Explore booking patterns, trends, and statistical insights across all jobs and models.
+                </div>
+                <span class="report-link">View Report</span>
+            </a>
+            
+            <a href="voc_analysis_interactive.html" class="report-card">
+                <div class="report-icon">💬</div>
+                <div class="report-title">VOC Analysis</div>
+                <div class="report-description">
+                    Interactive voice of customer analysis with thematic feedback from clients and models.
+                </div>
+                <span class="report-link">View Report</span>
+            </a>
+            
+            <a href="vocabulary_report.html" class="report-card">
+                <div class="report-icon">📝</div>
+                <div class="report-title">Vocabulary Report</div>
+                <div class="report-description">
+                    Text analysis with top phrases, job names, and keyword frequencies with translations.
+                </div>
+                <span class="report-link">View Report</span>
+            </a>
+            
+            <a href="visual_dashboard.html" class="report-card">
+                <div class="report-icon">📸</div>
+                <div class="report-title">Visual Dashboard</div>
+                <div class="report-description">
+                    Interactive table-based dashboard with job grouping, keywords, and searchable content.
+                </div>
+                <span class="report-link">View Report</span>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>Generated on January 30, 2026</p>
+            <p>For internal use only</p>
+        </div>
+    </div>
+
+    <script>
+        // Password - CHANGE THIS to your desired password!
+        const CORRECT_PASSWORD = 'spotlite2025';
+        
+        // Check if already logged in (stored in session)
+        if (sessionStorage.getItem('authenticated') === 'true') {
+            showDashboard();
+        }
+        
+        function checkPassword(event) {
+            event.preventDefault();
+            
+            const input = document.getElementById('passwordInput');
+            const errorMsg = document.getElementById('errorMessage');
+            
+            if (input.value === CORRECT_PASSWORD) {
+                // Correct password
+                sessionStorage.setItem('authenticated', 'true');
+                showDashboard();
+            } else {
+                // Wrong password
+                errorMsg.classList.add('show');
+                input.value = '';
+                input.focus();
+                
+                // Shake animation
+                input.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    input.style.animation = '';
+                }, 500);
+            }
+        }
+        
+        function showDashboard() {
+            document.getElementById('loginContainer').classList.add('hidden');
+            document.getElementById('dashboard').classList.add('show');
+        }
+        
+        function logout() {
+            sessionStorage.removeItem('authenticated');
+            document.getElementById('loginContainer').classList.remove('hidden');
+            document.getElementById('dashboard').classList.remove('show');
+            document.getElementById('passwordInput').value = '';
+        }
+        
+        // Add shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                20%, 40%, 60%, 80% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
